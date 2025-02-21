@@ -1,0 +1,24 @@
+{% extends 'base/base.html' %}
+  
+{% block styles %}
+{% load static %}    
+<link rel="stylesheet" href="{% static 'css/users.css' %}">
+<link rel="stylesheet" href="{% static 'css/menu.css' %}">
+{% endblock %}
+
+{% block content %}
+
+<div class="container">
+    <div class="title">
+        <h1>Lista de clientes</h1>
+        <a href="{% url 'createUser' %}">CREAR</a>
+    </div>
+    <div class="user-list">
+        {% for item in users %}
+        {% include 'components/userCard.html' with photo=item.photo name=item.name email=item.email id=item.id %}
+        {% endfor %}
+    </div>
+</div>    
+{% endblock %}
+
+

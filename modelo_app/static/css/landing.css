@@ -1,0 +1,15 @@
+.title {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+main {
+    flex: 1;
+    padding-top: 70px; 
+    padding-bottom: 70px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: calc(100vh - 120px); /* Ajusta este valor según la altura del header y footer */
+}

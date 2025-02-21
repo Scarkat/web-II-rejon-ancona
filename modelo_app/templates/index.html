@@ -1,0 +1,17 @@
+{% extends 'base/base.html' %}
+{% load static %}    
+
+{% block title %}
+Landing Page
+{% endblock %}
+
+{% block styles %}
+<link rel="stylesheet" href="{% static 'css/landing.css' %}">
+<link rel="stylesheet" href="{% static 'css/menu.css' %}">
+{% endblock %}
+
+{% block content %}
+<div class="title">
+    <h1>Este es el inicio de mi app</h1>
+</div>
+{% endblock %}

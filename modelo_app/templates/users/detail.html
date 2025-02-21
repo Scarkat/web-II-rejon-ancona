@@ -1,0 +1,22 @@
+{% extends "base/base.html" %}
+
+{% block styles %}
+{% load static %}    
+<link rel="stylesheet" href="{% static 'css/detail.css' %}">
+<link rel="stylesheet" href="{% static 'css/menu.css' %}">
+{% endblock %}
+
+{% block content %}
+<div class="user-info">
+    <p><strong>NAME: </strong>{{user.name}}</p>
+    <p><strong>EMAIL: </strong>{{user.email}}</p>
+    <p><strong>AGE: </strong>{{user.age}}</p>
+    <p><strong>RFC: </strong>{{user.rfc}}</p>
+    <a href="{% url 'updateUser' user.id %}">Update User</a>
+</div>
+
+{% endblock %}
+
+{% block scripts %}
+{% endblock %}
+
