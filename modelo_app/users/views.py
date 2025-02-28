@@ -1,6 +1,6 @@
 from django.http import JsonResponse
 from django.shortcuts import get_object_or_404, redirect, render
-from .models import User
+from .models import User, User_Adress
 import json
 
 def usersIndex(request):
@@ -40,7 +40,8 @@ def createUser(request):
 
 def userDetail(request, id):
     user = get_object_or_404(User, id=id)
-    return render(request, "users/detail.html", {"user":user})
+    adress = User_Adress.objects.filter(user=user)
+    return render(request, "users/detail.html", {"user":user, "adress":adress})
 
 def updateUser(request, id):
     data = {}

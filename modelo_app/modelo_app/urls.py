@@ -21,6 +21,7 @@ from modelo_app import views
 
 urlpatterns = [
     path('admin/', admin.site.urls),
+    path('examen/', include("examen.urls")),
     path('orders/', include("orders.urls")),
     path('users/', include("users.urls")),
     path('', views.index, name='index'),

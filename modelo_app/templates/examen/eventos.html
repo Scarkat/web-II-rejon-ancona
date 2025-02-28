@@ -1,0 +1,24 @@
+{% extends 'base/base.html' %}
+  
+{% block styles %}
+{% load static %} 
+<link rel="stylesheet" href="{% static 'css/examen_eventos.css' %}">   
+<link rel="stylesheet" href="{% static 'css/menu.css' %}">
+{% endblock %}
+
+{% block content %}
+<h1 class="title">Eventos</h1>
+<div class="event-container">
+    {% for item in evento %}
+    <div class="event-card">
+        <div class="event-image">
+            <img src="{% static 'img/carnival8.jpg' %}" alt="">
+        </div>
+        <div class="event-description">
+            {% include 'components/eventoCard.html' with name=item.name localidad=item.localidad id=item.id %}
+            <a href="{% url 'examen_boleto' %}">Boletos</a>
+        </div>
+    </div>
+    {% endfor %}
+</div>
+{% endblock %}

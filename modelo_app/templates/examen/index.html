@@ -1,0 +1,60 @@
+{% extends 'base/base.html' %}
+  
+{% block styles %}
+{% load static %} 
+<link rel="stylesheet" href="{% static 'css/examen_index.css' %}">   
+<link rel="stylesheet" href="{% static 'css/menu.css' %}">
+{% endblock %}
+
+{% block content %}
+<div class="base-container">
+    <div class="left-container">
+        <img src="{% static 'img/carnival1.jpeg' %}" alt="">
+        <div class="bottom-left-container">
+            <img src="{% static 'img/carnival2.jpg' %}" alt="">
+            <img src="{% static 'img/carnival3.jpg' %}" alt="">
+        </div>
+    </div>
+
+    <div class="right-container">
+        <img src="{% static 'img/carnival1.jpeg' %}" alt="">
+        <div class="bottom-right-container">
+            <img src="{% static 'img/carnival5.jpg' %}" alt="">
+        </div>
+    </div>
+</div>
+
+<h1 class="news-title">NOTICIAS</h1>
+<div class="news-container">
+    <div class="news-content">
+        <div class="news-left-container">
+            <div class="news-card">
+                <img src="{% static 'img/carnival1.jpeg' %}" alt="">
+                <h2>Noticia #1</h2>
+                <p>Lorem ipsum dolor sit amet consectetur adipisicing elit</p>           
+            </div>
+            <div class="news-card">
+                <img src="{% static 'img/carnival1.jpeg' %}" alt="">
+                <h2>Noticia #2</h2>
+                <p>Lorem ipsum dolor sit amet consectetur adipisicing elit</p>              
+            </div>
+            <div class="news-card">
+                <img src="{% static 'img/carnival1.jpeg' %}" alt="">
+                <h2>Noticia #2</h2>
+                <p>Lorem ipsum dolor sit amet consectetur adipisicing elit</p>              
+            </div>
+            <div class="news-card">
+                <img src="{% static 'img/carnival1.jpeg' %}" alt="">
+                <h2>Noticia #2</h2>
+                <p>Lorem ipsum dolor sit amet consectetur adipisicing elit</p>              
+            </div>
+        </div>
+        <div class="news-right-container">
+            {% for item in evento %}
+            <img src="{% static 'img/carnival8.jpg' %}" alt="">
+            {% include 'components/eventoCard.html' with name=item.name localidad=item.localidad id=item.id %}
+            {% endfor %}
+        </div>
+    </div>
+</div>
+{% endblock %}

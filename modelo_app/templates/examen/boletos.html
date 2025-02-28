@@ -1,0 +1,21 @@
+{% extends 'base/base.html' %}
+  
+{% block styles %}
+{% load static %} 
+<link rel="stylesheet" href="{% static 'css/examen_boletos.css' %}">   
+<link rel="stylesheet" href="{% static 'css/menu.css' %}">
+{% endblock %}
+
+{% block content %}
+<div class="ticket-container">
+    {% for item in boleto %}
+    <div class="ticket-card">
+        <img src="{% static 'img/ticket.png' %}" alt="">
+        <div class="ticket-description">
+            {% include 'components/boletoCard.html' with name=item.name evento=item.evento precio=item.precio id=item.id %}
+            <a href="">Comprar</a>
+        </div>
+    </div>
+    {% endfor %}
+</div>
+{% endblock %}
